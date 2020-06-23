@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test', function () {
+    return view('welcome');
+});
+
+Route::resource('videos', 'VideoController');
+
+Route::resource('platforms', 'PlatformController')->except([
+    'index', 'show'
+]);
