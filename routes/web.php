@@ -24,3 +24,5 @@ Route::resource('videos', 'VideoController');
 Route::resource('platforms', 'PlatformController')->except([
     'index', 'show'
 ]);
+
+Route::get('search', 'VideoController@search')->name('search');

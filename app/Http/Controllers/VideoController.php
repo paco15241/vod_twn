@@ -11,7 +11,7 @@ class VideoController extends Controller
     public function index()
     {
         // $videos = Video::with('platforms')->get();
-        $videos = Video::orderBy('created_at', 'desc')->get();
+        $videos = Video::orderBy('created_at', 'desc')->paginate(20)->onEachSide(3);
         return view('index')->with(['videos' => $videos]);
     }
 
@@ -50,5 +50,19 @@ class VideoController extends Controller
         $video->delete();
         //Session::flash('flash_message', '資料已刪除');
         return redirect()->route('videos.index');
+    }
+
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword', NULL);
+
+        if(!$keyword)
+        {
+            $results = Video::where('id', NULL)->paginate(20)->onEachSide(3);
+            return view('search')->with(['keyword' => '', 'results' => $results]);
+        }
+
+        $results = Video::where('title', 'like', "%$keyword%")->orWhere('title_en', 'like', "%$keyword%")->paginate(20)->onEachSide(3);
+        return view('search')->with(['keyword' => $keyword, 'results' => $results]);
     }
 }
