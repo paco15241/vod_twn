@@ -24,6 +24,11 @@
   </div>
 
   <div class="field">
+    {{ Form::label('year', '年份', ['class' => 'label']) }}
+    {{ Form::text('year', null, ['class' => 'input']) }}
+  </div>
+
+  <div class="field">
     {{ Form::label('poster_url', '海報網址', ['class' => 'label']) }}
     {{ Form::text('poster_url', null, ['class' => 'input']) }}
   </div>
@@ -41,6 +46,13 @@
   <div class="field">
     {{ Form::label('douban_id', '豆瓣 ID', ['class' => 'label']) }}
     {{ Form::text('douban_id', null, ['class' => 'input']) }}
+  </div>
+
+  <div class="field">
+    <label class="checkbox">
+      {{ Form::checkbox('status', '1', $video->status ? true : false, $attributes=['class' => 'checkbox']) }}
+      是否上線
+    </label>
   </div>
 
   
@@ -63,7 +75,7 @@
         @foreach($video->platforms as $platform)
         <tr>
           <td>{{ $platform->platform_name }}</td>
-          <td><a href="{{ $platform->page_url }}" target="_blank">{{$platform->title}}</a></td>
+          <td><a href="{{ $platform->vod_url }}" target="_blank">{{$platform->vod_title}}</a></td>
           <td><a href="{{ route('platforms.edit', ['id' => $platform->id]) }}" class="button is-small">編輯</a></td>
           <td><a href="{{ route('platforms.destroy', ['id' => $platform->id]) }}" data-method="delete" data-token="{{ csrf_token() }}" data-confirm="Are you sure?" class="button is-danger is-small">刪除</a></td>
         </tr>

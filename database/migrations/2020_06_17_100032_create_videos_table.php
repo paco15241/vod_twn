@@ -19,11 +19,18 @@ class CreateVideosTable extends Migration
             $table->string('title_en', 500)->nullable();
             $table->text('description')->nullable();
             $table->text('description_en')->nullable();
+            $table->year('year')->nullable();
             $table->string('poster_url', 2083)->nullable();
             $table->string('imdb_id', 100)->nullable();
             $table->string('atmovies_id', 100)->nullable();
             $table->string('douban_id', 100)->nullable();
+            $table->boolean('status')->default(0);
             $table->timestamps();
+            $table->softDeletes();
+
+            $table->index('title');
+            $table->index('title_en');
+            $table->index('imdb_id');
         });
     }
 

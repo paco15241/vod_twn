@@ -17,15 +17,18 @@ class CreatePlatformsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('video_id')->unsigned();
             $table->string('platform_name', 500);
-            $table->string('title', 500)->nullable();
-            $table->text('description')->nullable();
-            $table->string('page_url', 500)->nullable();
-            $table->string('provider', 500)->nullable();
+            $table->string('vod_id', 100)->nullable();
+            $table->string('vod_title', 500)->nullable();
+            $table->text('vod_description')->nullable();
+            $table->string('vod_url', 500)->nullable();
+            $table->string('vod_provider', 500)->nullable();
             $table->timestamp('on_at')->nullable();
             $table->timestamp('off_at')->nullable();
+            $table->boolean('status')->default(0);
             $table->timestamps();
 
             $table->foreign('video_id')->references('id')->on('videos')->onDelete('cascade');
+            $table->index('vod_id');
         });
     }
 

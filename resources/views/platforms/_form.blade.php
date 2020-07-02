@@ -11,23 +11,28 @@
   </div>
 
   <div class="field">
-    {{ Form::label('title', '標題', ['class' => 'label']) }}
-    {{ Form::text('title', null, ['class' => 'input']) }}
+    {{ Form::label('vod_id', '序號', ['class' => 'label']) }}
+    {{ Form::text('vod_id', null, ['class' => 'input']) }}
+  </div>
+  
+  <div class="field">
+    {{ Form::label('vod_title', '標題', ['class' => 'label']) }}
+    {{ Form::text('vod_title', null, ['class' => 'input']) }}
   </div>
 
   <div class="field">
-    {{ Form::label('description', '描述', ['class' => 'label']) }}
-    {{ Form::textarea('description', null, ['class' => 'textarea']) }}
+    {{ Form::label('vod_description', '描述', ['class' => 'label']) }}
+    {{ Form::textarea('vod_description', null, ['class' => 'textarea']) }}
   </div>
 
   <div class="field">
-    {{ Form::label('page_url', '網址', ['class' => 'label']) }}
-    {{ Form::text('page_url', null, ['class' => 'input']) }}
+    {{ Form::label('vod_url', '網址', ['class' => 'label']) }}
+    {{ Form::text('vod_url', null, ['class' => 'input']) }}
   </div>
 
   <div class="field">
-    {{ Form::label('provider', '供應商', ['class' => 'label']) }}
-    {{ Form::text('provider', null, ['class' => 'input']) }}
+    {{ Form::label('vod_provider', '供應商', ['class' => 'label']) }}
+    {{ Form::text('vod_provider', null, ['class' => 'input']) }}
   </div>
 
   <div class="field">
@@ -38,6 +43,13 @@
   <div class="field">
     {{ Form::label('off_at', '下架時間', ['class' => 'label']) }}
     {{ Form::text('off_at', null, ['class' => 'input']) }}
+  </div>
+
+  <div class="field">
+    <label class="checkbox">
+      {{ Form::checkbox('status', '1', $platform->status ? true : false, $attributes=['class' => 'checkbox']) }}
+      是否上線
+    </label>
   </div>
 
   @if($platform->exists)

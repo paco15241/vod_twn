@@ -6,7 +6,7 @@
 
   <div class="field">
     {{ Form::label('page_url', '網址', ['class' => 'label']) }}
-    {{ Form::text('page_url', $platform->page_url, ['class' => 'input']) }}
+    {{ Form::text('page_url', $platform->vod_url, ['class' => 'input']) }}
   </div>
   
 @endforeach

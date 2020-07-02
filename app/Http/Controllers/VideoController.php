@@ -23,7 +23,7 @@ class VideoController extends Controller
 
     public function store(Request $request)
     {
-        Video::create($request->only(['title','title_en','description','description_en','poster_url','imdb_id','atmovies_id','douban_id']));
+        Video::create($request->only(['title','title_en','description','description_en','year','poster_url','imdb_id','atmovies_id','douban_id','status']));
         //Session::flash('flash_message', '資料已儲存');
         return redirect()->route('videos.index');
     }
@@ -40,7 +40,14 @@ class VideoController extends Controller
 
     public function update(Request $request, Video $video)
     {
-        $video->update($request->only(['title','title_en','description','description_en','poster_url','imdb_id','atmovies_id','douban_id']));
+        if($request->get('status') == null){
+            $status = 0;
+        } else {
+            $status = 1;
+        }
+        
+        $video->update($request->only(['title','title_en','description','description_en','year','poster_url','imdb_id','atmovies_id','douban_id']) + ['status' => $status]);
+
         //Session::flash('flash_message', '資料已更新');
         return redirect()->route('videos.edit', ['id' => $video->id]);
     }
