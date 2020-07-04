@@ -11,15 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/test', function () {
-    return view('welcome');
+Route::get('/', function() {
+    return redirect()->route('videos.index');
 });
 
 Route::resource('videos', 'VideoController');
+
+Route::get('/admin', 'VideoController@admin')->name('videos.admin');
 
 Route::resource('platforms', 'PlatformController')->except([
     'index', 'show'

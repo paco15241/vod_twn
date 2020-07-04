@@ -11,14 +11,20 @@ class VideoController extends Controller
     public function index()
     {
         // $videos = Video::with('platforms')->get();
-        $videos = Video::orderBy('created_at', 'desc')->paginate(20)->onEachSide(3);
-        return view('index')->with(['videos' => $videos]);
+        $videos = Video::orderBy('created_at', 'desc')->paginate(18)->onEachSide(3);
+        return view('videos.index')->with(['videos' => $videos]);
+    }
+
+    public function admin()
+    {
+        
+        return 'test';
     }
 
     public function create()
     {
         $video = new Video;
-        return view('create')->with(['video' => $video]);
+        return view('videos.create')->with(['video' => $video]);
     }
 
     public function store(Request $request)
@@ -30,12 +36,12 @@ class VideoController extends Controller
 
     public function show(Video $video)
     {
-        return view('show')->with(['video' => $video]);
+        return view('videos.show')->with(['video' => $video]);
     }
 
     public function edit(Video $video)
     {
-        return view('edit')->with(['video' => $video]);
+        return view('videos.edit')->with(['video' => $video]);
     }
 
     public function update(Request $request, Video $video)
@@ -65,11 +71,11 @@ class VideoController extends Controller
 
         if(!$keyword)
         {
-            $results = Video::where('id', NULL)->paginate(20)->onEachSide(3);
-            return view('search')->with(['keyword' => '', 'results' => $results]);
+            $results = Video::where('id', NULL)->paginate(18)->onEachSide(3);
+            return view('videos.search')->with(['keyword' => '', 'results' => $results]);
         }
 
-        $results = Video::where('title', 'like', "%$keyword%")->orWhere('title_en', 'like', "%$keyword%")->paginate(20)->onEachSide(3);
-        return view('search')->with(['keyword' => $keyword, 'results' => $results]);
+        $results = Video::where('title', 'like', "%$keyword%")->orWhere('title_en', 'like', "%$keyword%")->paginate(18)->onEachSide(3);
+        return view('videos.search')->with(['keyword' => $keyword, 'results' => $results]);
     }
 }
