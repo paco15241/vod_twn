@@ -3,8 +3,6 @@
 @section('pageTitle', '影片列表')
 
 @section('content')
-    <h1 class='title'>影片列表</h1>
-
     <section class="video_search section">
       @include('videos._search_form')
     </section>

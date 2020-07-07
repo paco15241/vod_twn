@@ -1,5 +1,5 @@
 {{ Form::model($platform, [
-    'route'  => $platform->exists ? [ 'platforms.update', $platform->id] : ['platforms.store'], 
+    'route'  => $platform->exists ? [ 'admin.platforms.update', $platform->id] : ['admin.platforms.store'], 
     'method' => $platform->exists ? 'put' : 'post', 
     'files'  =>true,
     'class'  => 'my-md-5'
@@ -82,7 +82,7 @@
 
   @if($platform->exists)
   {!! Form::submit('更新', ['class' => 'btn btn-primary btn-lg']) !!}
-  <a href="{{ route('platforms.destroy', ['id' => $platform->id]) }}" data-method="delete" data-token="{{ csrf_token() }}" data-confirm="Are you sure?" class="btn btn-danger btn-lg">刪除</a>
+  <a href="{{ route('admin.platforms.destroy', ['id' => $platform->id]) }}" data-method="delete" data-token="{{ csrf_token() }}" data-confirm="Are you sure?" class="btn btn-danger btn-lg">刪除</a>
   @else
   {!! Form::submit('送出', ['class' => 'btn btn-primary btn-lg']) !!}
   {!! Form::reset('重置', ['class' => 'btn btn-primary btn-lg']) !!}

@@ -20,15 +20,15 @@
             <div class="info_link">
               @if($video->imdb_id)
                 <a class="btn btn-outline-secondary"  target="_blank" title="IMDb" href="https://www.imdb.com/title/{{ $video->imdb_id }}">IMDb</a>
-                @endif
+              @endif
                 
-                @if($video->atmovies_id)
+              @if($video->atmovies_id)
                 <a class="btn btn-outline-secondary"  target="_blank" title="開眼" href="http://www.atmovies.com.tw/movie/{{ $video->atmovies_id }}">開眼</a>
-                @endif
+              @endif
 
-                @if($video->douban_id)
+              @if($video->douban_id)
                 <a class="btn btn-outline-secondary"  target="_blank" title="豆瓣" href="https://movie.douban.com/subject/{{ $video->douban_id }}">豆瓣</a>
-                @endif
+              @endif
             </div>
             
             <p class="mt-md-2">{{ $video->description }}</p>

@@ -4,5 +4,5 @@
 
 @section('content')
   <h1 class="title">新增影片</h1>
-  @include('videos._form')
+  @include('admin.videos._form')
 @endsection
