@@ -63,7 +63,7 @@ class VideoController extends Controller
     public function store(Request $request)
     {
         Video::create($request->only(['title','title_en','description','description_en','year','poster_url','imdb_id','atmovies_id','douban_id','status']));
-        //Session::flash('flash_message', '資料已儲存');
+        flash('資料已儲存')->success()->important();
         return redirect()->route('admin.videos.index');
     }
 
@@ -87,14 +87,14 @@ class VideoController extends Controller
         
         $video->update($request->only(['title','title_en','description','description_en','year','poster_url','imdb_id','atmovies_id','douban_id']) + ['status' => $status]);
 
-        //Session::flash('flash_message', '資料已更新');
+        flash('資料已更新')->success()->important();
         return redirect()->route('admin.videos.edit', ['id' => $video->id]);
     }
 
     public function destroy(Video $video)
     {
         $video->delete();
-        //Session::flash('flash_message', '資料已刪除');
+        flash('資料已刪除')->success()->important();
         return redirect()->route('admin.videos.index');
     }
 }

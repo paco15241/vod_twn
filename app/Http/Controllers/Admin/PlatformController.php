@@ -24,7 +24,7 @@ class PlatformController extends Controller
         $video_id = $request->input('video_id', NULL);
         if(!$video_id)
         {
-            //Session::flash('flash_message', '無法對應影片');
+            flash('無法對應影片')->error()->important();
             return redirect()->back();
         }
             
@@ -37,7 +37,7 @@ class PlatformController extends Controller
         $video_id = $request->input('video_id');
         Platform::create($request->only(['video_id','platform_name','vod_id','vod_title','vod_description','vod_url','vod_provider','on_at','off_at','status']));
 
-        //Session::flash('flash_message', '資料已儲存');
+        flash('資料已儲存')->success()->important();
         return redirect()->route('admin.videos.edit', ['id' => $video_id]);
     }
 
@@ -64,7 +64,7 @@ class PlatformController extends Controller
         }
         
         $platform->update($request->only(['video_id','platform_name','vod_id','vod_title','vod_description','vod_url','vod_provider','on_at','off_at']) + ['status' => $status]);
-        //Session::flash('flash_message', '資料已更新');
+        flash('資料已更新')->success()->important();
         return redirect()->route('admin.videos.edit', ['id' => $video_id]);
     }
 
@@ -72,7 +72,7 @@ class PlatformController extends Controller
     {
         $video_id = $platform->video_id;
         $platform->delete();
-        //Session::flash('flash_message', '資料已刪除');
+        flash('資料已刪除')->success()->important();
         return redirect()->route('admin.videos.edit', ['id' => $video_id]);
     }
 }
