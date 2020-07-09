@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Platform;
 use Illuminate\Http\Request;
+use App\Http\Requests\Admin\CreatePlatformRequest;
 use App\Http\Controllers\Controller;
 
 class PlatformController extends Controller
@@ -32,7 +33,7 @@ class PlatformController extends Controller
         return view('admin.platforms.create')->with(['platform' => $platform, 'video_id' => $video_id]);
     }
 
-    public function store(Request $request)
+    public function store(CreatePlatformRequest $request)
     {
         $video_id = $request->input('video_id');
         Platform::create($request->only(['video_id','platform_name','vod_id','vod_title','vod_description','vod_url','vod_provider','on_at','off_at','status']));
@@ -53,7 +54,7 @@ class PlatformController extends Controller
         return view('admin.platforms.edit')->with(['platform' => $platform, 'video_id' => $video_id]);
     }
 
-    public function update(Request $request, Platform $platform)
+    public function update(CreatePlatformRequest $request, Platform $platform)
     {
         $video_id = $platform->video_id;
         

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Video;
 use Illuminate\Http\Request;
+use App\Http\Requests\Admin\CreateVideoRequest;
 use App\Http\Controllers\Controller;
 
 class VideoController extends Controller
@@ -60,7 +61,7 @@ class VideoController extends Controller
         return view('admin.videos.create')->with(['video' => $video]);
     }
 
-    public function store(Request $request)
+    public function store(CreateVideoRequest $request)
     {
         Video::create($request->only(['title','title_en','description','description_en','year','poster_url','imdb_id','atmovies_id','douban_id','status']));
         flash('資料已儲存')->success()->important();
@@ -77,7 +78,7 @@ class VideoController extends Controller
         return view('admin.videos.edit')->with(['video' => $video]);
     }
 
-    public function update(Request $request, Video $video)
+    public function update(CreateVideoRequest $request, Video $video)
     {
         if($request->get('status') == null){
             $status = 0;

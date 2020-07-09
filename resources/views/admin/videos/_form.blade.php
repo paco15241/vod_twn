@@ -9,6 +9,11 @@
     {{ Form::label('title', '標題', ['class' => 'col-md-2 col-form-label']) }}
     <div class="col-md-10">
       {{ Form::text('title', null, ['class' => 'form-control']) }}
+      @if ($errors->first('title'))
+        <span class="text-danger">
+            <strong>{{ $errors->first('title') }}</strong>
+        </span>
+      @endif
     </div>
   </div>
 
@@ -16,6 +21,11 @@
     {{ Form::label('title_en', '標題（英文）', ['class' => 'col-md-2 col-form-label']) }}
     <div class="col-md-10">
       {{ Form::text('title_en', null, ['class' => 'form-control']) }}
+      @if ($errors->first('title_en'))
+        <span class="text-danger">
+            <strong>{{ $errors->first('title_en') }}</strong>
+        </span>
+      @endif
     </div>
   </div>
 
@@ -37,6 +47,11 @@
     {{ Form::label('year', '年份', ['class' => 'col-md-2 col-form-label']) }}
     <div class="col-md-10">
       {{ Form::text('year', null, ['class' => 'form-control']) }}
+      @if ($errors->first('year'))
+        <span class="text-danger">
+            <strong>{{ $errors->first('year') }}</strong>
+        </span>
+      @endif
     </div>
   </div>
 
@@ -44,6 +59,11 @@
     {{ Form::label('poster_url', '海報網址', ['class' => 'col-md-2 col-form-label']) }}
     <div class="col-md-10">
       {{ Form::text('poster_url', null, ['class' => 'form-control']) }}
+      @if ($errors->first('poster_url'))
+        <span class="text-danger">
+            <strong>{{ $errors->first('poster_url') }}</strong>
+        </span>
+      @endif
     </div>
   </div>
 
@@ -51,6 +71,11 @@
     {{ Form::label('imdb_id', 'IMDb ID', ['class' => 'col-md-2 col-form-label']) }}
     <div class="col-md-10">
       {{ Form::text('imdb_id', null, ['class' => 'form-control']) }}
+      @if ($errors->first('imdb_id'))
+        <span class="text-danger">
+            <strong>{{ $errors->first('imdb_id') }}</strong>
+        </span>
+      @endif
     </div>
   </div>
 
@@ -58,6 +83,11 @@
     {{ Form::label('atmovies_id', '開眼 ID', ['class' => 'col-md-2 col-form-label']) }}
     <div class="col-md-10">
       {{ Form::text('atmovies_id', null, ['class' => 'form-control']) }}
+      @if ($errors->first('atmovies_id'))
+        <span class="text-danger">
+            <strong>{{ $errors->first('atmovies_id') }}</strong>
+        </span>
+      @endif
     </div>
   </div>
 
@@ -65,6 +95,11 @@
     {{ Form::label('douban_id', '豆瓣 ID', ['class' => 'col-md-2 col-form-label']) }}
     <div class="col-md-10">
       {{ Form::text('douban_id', null, ['class' => 'form-control']) }}
+      @if ($errors->first('douban_id'))
+        <span class="text-danger">
+            <strong>{{ $errors->first('douban_id') }}</strong>
+        </span>
+      @endif
     </div>
   </div>
 

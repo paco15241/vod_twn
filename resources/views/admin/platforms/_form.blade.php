@@ -18,6 +18,11 @@
     {{ Form::label('platform_name', '平台', ['class' => 'col-md-2 col-form-label']) }}
     <div class="col-md-10">
       {{ Form::text('platform_name', null, ['class' => 'form-control']) }}
+      @if ($errors->first('platform_name'))
+        <span class="text-danger">
+            <strong>{{ $errors->first('platform_name') }}</strong>
+        </span>
+      @endif
     </div>
   </div>
   
@@ -25,6 +30,11 @@
     {{ Form::label('vod_id', '序號', ['class' => 'col-md-2 col-form-label']) }}
     <div class="col-md-10">
       {{ Form::text('vod_id', null, ['class' => 'form-control']) }}
+      @if ($errors->first('vod_id'))
+        <span class="text-danger">
+            <strong>{{ $errors->first('vod_id') }}</strong>
+        </span>
+      @endif
     </div>
   </div>
 
@@ -32,6 +42,11 @@
     {{ Form::label('vod_title', '標題', ['class' => 'col-md-2 col-form-label']) }}
     <div class="col-md-10">
       {{ Form::text('vod_title', null, ['class' => 'form-control']) }}
+      @if ($errors->first('vod_title'))
+        <span class="text-danger">
+            <strong>{{ $errors->first('vod_title') }}</strong>
+        </span>
+      @endif
     </div>
   </div>
   
@@ -46,6 +61,11 @@
     {{ Form::label('vod_url', '網址', ['class' => 'col-md-2 col-form-label']) }}
     <div class="col-md-10">
       {{ Form::text('vod_url', null, ['class' => 'form-control']) }}
+      @if ($errors->first('vod_url'))
+        <span class="text-danger">
+            <strong>{{ $errors->first('vod_url') }}</strong>
+        </span>
+      @endif
     </div>
   </div>
 
@@ -53,6 +73,11 @@
     {{ Form::label('vod_provider', '供應商', ['class' => 'col-md-2 col-form-label']) }}
     <div class="col-md-10">
       {{ Form::text('vod_provider', null, ['class' => 'form-control']) }}
+      @if ($errors->first('vod_provider'))
+        <span class="text-danger">
+            <strong>{{ $errors->first('vod_provider') }}</strong>
+        </span>
+      @endif
     </div>
   </div>
 
@@ -60,6 +85,11 @@
     {{ Form::label('on_at', '上架時間', ['class' => 'col-md-2 col-form-label']) }}
     <div class="col-md-10">
       {{ Form::text('on_at', null, ['class' => 'form-control']) }}
+      @if ($errors->first('on_at'))
+        <span class="text-danger">
+            <strong>{{ $errors->first('on_at') }}</strong>
+        </span>
+      @endif
     </div>
   </div>
 
@@ -67,6 +97,11 @@
     {{ Form::label('off_at', '下架時間', ['class' => 'col-md-2 col-form-label']) }}
     <div class="col-md-10">
       {{ Form::text('off_at', null, ['class' => 'form-control']) }}
+      @if ($errors->first('off_at'))
+        <span class="text-danger">
+            <strong>{{ $errors->first('off_at') }}</strong>
+        </span>
+      @endif
     </div>
   </div>
 
