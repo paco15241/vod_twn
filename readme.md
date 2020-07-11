@@ -8,15 +8,15 @@
 
 
 
-[TOC]
-
-# 專案起因
+## 專案起因
 
 由於自己想做一個台灣影音串流平台整合的查詢功能，藉由 Python + Laravel 練習，希望可以打造自動化整合的平台。
 
 
 
-# 專案內容
+
+
+## 專案內容
 
 * Laravel 5.8
 * Laravel 專案設定（config/app.php），設定語系、時區
@@ -35,25 +35,21 @@
 
 
 
-# 其他相關參考資料
+## 其他相關參考資料
 
-## Laravel 專案相關
+Laravel 專案相關
 
 * 刪除按鈕，使用 JS 方式實作：[CRUD: How to avoid building whole Form for Delete button - Laravel Daily](https://laraveldaily.com/crud-how-to-avoid-building-whole-form-for-delete-button/)
 * 表單驗證 3 種寫法：[Laravel 使用 validate 進行參數驗證 - HackMD](https://hackmd.io/@8irD0FCGSQqckvMnLpAmzw/HJ1LqggUQ?type=view)
 
-
-
-## 相關影音資料庫
-
-### 國內外串流影片資料庫
+國內外串流影片資料庫
 
 * [awwrated](https://awwrated.com/)：專注於台灣 Netflix 片單
 * [追劇衛星](https://dramas.com.tw/)：專注於台灣 Netflix 片單（日後還會有 Amazon Prime Video、Apple TV+ 等平台）
 * [uNoGS](https://unogs.com/)：多國 Netflix 片單（不包括台灣）
 * [JustWatch](https://www.justwatch.com/)：多國串流平台片單（不包括台灣）
 
-### 國內外影音資料網站
+國內外影音資料網站
 
 * 開眼電影：http://www.atmovies.com.tw/
 * 電影神搜：https://www.agentm.tw/
@@ -67,7 +63,9 @@
 
 
 
-# 專案後續
+
+
+## 專案後續
 
 實作過後，有一些問題或功能待改善...
 
