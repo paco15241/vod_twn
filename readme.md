@@ -29,7 +29,11 @@
 * 開啟認證功能，登入後才能進後台新增、編輯或刪除資料
 * Flash Message，使用到 laracasts/flash 套件
 * 使用 Python 爬取串流平台資料
-* demo 部署至 Heroku
+* demo 部署至 Heroku：http://vod-twn.herokuapp.com/
+
+
+
+![DEMO](https://i.imgur.com/u5OlIIC.gif)
 
 
 
